@@ -1,0 +1,142 @@
+/* ── Fonts ─────────────────────────────────────────────── */
+/* Inter loaded via <link> in HTML */
+
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+  --bg:          #f7f7f8;
+  --text:        #374151;
+  --heading:     #111827;
+  --muted:       #6b7280;
+  --accent:      #2563eb;
+  --accent-text: #ffffff;
+  --pill-bg:     #e5e7eb;
+  --pill-hover:  #d1d5db;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #0f0f11;
+    --text:        #d1d5db;
+    --heading:     #f9fafb;
+    --muted:       #9ca3af;
+    --accent:      #60a5fa;
+    --accent-text: #0f0f11;
+    --pill-bg:     #1f2937;
+    --pill-hover:  #374151;
+  }
+}
+
+/* ── Reset & Base ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Entrance animation ─────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* ── Profile card (full-bleed, no box) ──────────────────── */
+.profile {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Profile image ──────────────────────────────────────── */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Name & title ───────────────────────────────────────── */
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--heading);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0.4rem;
+}
+
+/* ── Bio ────────────────────────────────────────────────── */
+.bio {
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-top: 1rem;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Social links ───────────────────────────────────────── */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background-color: var(--pill-bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  transform: translateY(-2px);
+}
+
+.social-links a i {
+  font-size: 0.9rem;
+}
